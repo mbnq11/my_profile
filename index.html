@@ -17,9 +17,10 @@
         }
 
         :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #b026ff;
+            /* الألوان الجديدة: تدرجات الأصفر والذهبي */
+            --primary: #ffc107;      /* أصفر أساسي */
+            --secondary: #ffe066;    /* أصفر فاتح */
+            --accent: #ff9800;       /* برتقالي/ذهبي للتناقض */
             --bg-color: #0b0f19;
             --card-bg: rgba(20, 25, 40, 0.6);
             --card-border: rgba(255, 255, 255, 0.08);
@@ -32,8 +33,8 @@
             font-family: 'Tajawal', 'Outfit', sans-serif;
             background-color: var(--bg-color);
             background-image:
-                radial-gradient(circle at 15% 50%, rgba(79, 172, 254, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(176, 38, 255, 0.15), transparent 25%);
+                radial-gradient(circle at 15% 50%, rgba(255, 193, 7, 0.10), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255, 152, 0, 0.10), transparent 25%);
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
@@ -91,7 +92,7 @@
             gap: 30px;
         }
 
-        /* تأثير الزجاج الشفاف للبطاقات (Glassmorphism) */
+        /* تأثير الزجاج الشفاف للبطاقات */
         .glass-card {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
@@ -122,7 +123,7 @@
             left: 0;
             right: 0;
             height: 100px;
-            background: linear-gradient(180deg, rgba(79, 172, 254, 0.1) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
             border-radius: 24px 24px 0 0;
         }
 
@@ -133,17 +134,15 @@
             margin: 0 auto 25px;
         }
 
+        /* تعديل إطار الصورة ليصبح أنيق ونظيف */
         .profile-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid transparent;
-            background-image: linear-gradient(var(--bg-color), var(--bg-color)), linear-gradient(135deg, var(--primary), var(--accent));
-            background-origin: border-box;
-            background-clip: content-box, border-box;
-            padding: 3px;
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            border: 3px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+            background-color: var(--bg-color); /* يمنع ظهور الألوان من الخلفية إذا كانت الصورة شفافة */
         }
 
         .online-badge {
@@ -214,7 +213,7 @@
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.15);
         }
 
         .contact-pill i {
@@ -254,7 +253,7 @@
 
         .section-header i {
             color: var(--primary);
-            background: rgba(0, 242, 254, 0.1);
+            background: rgba(255, 193, 7, 0.1);
             width: 40px;
             height: 40px;
             display: flex;
@@ -289,7 +288,7 @@
         }
 
         .file-card:hover {
-            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(176, 38, 255, 0.05));
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.05));
             border-color: var(--primary);
             transform: translateY(-5px);
         }
@@ -379,11 +378,11 @@
             margin-top: 8px;
             padding: 5px 10px;
             border-radius: 6px;
-            background: rgba(0, 242, 254, 0.1);
+            background: rgba(255, 193, 7, 0.1);
         }
 
         .project-link:hover {
-            background: rgba(0, 242, 254, 0.2);
+            background: rgba(255, 193, 7, 0.2);
             transform: translateX(-3px);
         }
 
@@ -468,7 +467,7 @@
         }
 
         .skill-tag:hover {
-            background: rgba(79, 172, 254, 0.1);
+            background: rgba(255, 193, 7, 0.1);
             border-color: var(--primary);
             transform: translateY(-2px);
         }
@@ -693,338 +692,4 @@
                             target="_blank" class="file-card">
                             <i class="fas fa-folder-open"></i>
                             <h4 data-ar="المشاريع" data-en="Projects">المشاريع</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">عرض وتنزيل</p>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <h2 class="section-header">
-                        <i class="fas fa-user-astronaut"></i>
-                        <span data-ar="الملخص المهني" data-en="Professional Summary">الملخص المهني</span>
-                    </h2>
-                    <p style="color: var(--text-muted); font-size: 0.95em; text-align: justify;"
-                        data-ar="أخصائي نظم معلومات وأمن سيبراني حاصل على درجة البكالوريوس في نظم المعلومات، ولدي خبرة عملية في الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة كذلك أمتلك مهارات في الحوكمة والمخاطر والامتثال (GRC)ومركز العمليات الأمنية (SOC) وتحليل وتصميم الأنظمة كذلك إدارة قواعد البيانات، وتطوير الويب ولدي خبرة في تطوير الحلول التقنية ودعم التحول الرقمي وأسعى إلى توظيف مهاراتي التقنية والتحليلية لتعزيز ورفع كفاءة المنظمات."
-                        data-en="Information Systems and Cybersecurity Specialist with a Bachelor's degree in Information Systems. I have practical experience in cybersecurity, information technology, and systems development. I possess strong skills in Governance, Risk, and Compliance (GRC), Security Operations Center (SOC), systems analysis and design, database management, and web development. I have experience in developing technical solutions and supporting digital transformation initiatives. I aim to leverage my technical and analytical expertise to enhance organizational efficiency and effectiveness.">
-                        أخصائي نظم معلومات وأمن سيبراني حاصل على درجة البكالوريوس في نظم المعلومات، ولدي خبرة عملية في
-                        الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة كذلك أمتلك مهارات في الحوكمة والمخاطر والامتثال
-                        (GRC)ومركز العمليات الأمنية (SOC) وتحليل وتصميم الأنظمة كذلك إدارة قواعد البيانات، وتطوير الويب
-                        ولدي خبرة في تطوير الحلول التقنية ودعم التحول الرقمي وأسعى إلى توظيف مهاراتي التقنية والتحليلية
-                        لتعزيز ورفع كفاءة المنظمات.
-                    </p>
-                </div>
-
-                <div class="glass-card">
-                    <h2 class="section-header">
-                        <i class="fas fa-briefcase"></i>
-                        <span data-ar="الخبرات المهنية" data-en="Professional Experience">الخبرات المهنية</span>
-                    </h2>
-
-                    <div class="timeline-item">
-                        <div class="job-title" data-ar="أخصائي أمن سيبراني" data-en="Cybersecurity Specialist">
-                            <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
-                            أخصائي أمن سيبراني
-                        </div>
-                        <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
-                            <span class="date-badge" data-ar="اكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">
-                                أكتوبر 2025 – فبراير 2026 </span>
-                        </div>
-                        <ul class="description-list">
-                            <li data-ar="توليت عمليات مراجعة، وإعداد، وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن السيبراني"
-                                data-en="Managed review, preparation, and auditing of sensitive reports and documents for the General Cybersecurity Department.">
-                                توليت عمليات مراجعة، وإعداد، وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن
-                                السيبراني</li>
-                            <li data-ar="قمت بتطبيق إطار عمل الامتثال السيبراني NCA"
-                                data-en="Implemented the NCA Cybersecurity Compliance Framework.">
-                                قمت بتطبيق إطار عمل الامتثال السيبراني NCA</li>
-                            <li data-ar="توليت مهام في الإدارة أدت إلى تحويل إدارة الأمن السيبراني إلى إدارة عامة"
-                                data-en="Led administrative responsibilities that resulted in the transformation of the Cybersecurity Department into a General Department.">
-                                توليت مهام في الإدارة أدت إلى تحويل إدارة الأمن السيبراني إلى إدارة عامة</li>
-                            <li data-ar="توليت بشكل فردي التصميم والتنفيذ الشامل لنظام إدارة المهام والحوكمة الذي يتميز بقدرات لإصدار التقارير الآلية بصيغة PDF وExcel"
-                                data-en="Independently designed and implemented a comprehensive Task Management and Governance system featuring advanced automated reporting capabilities in PDF and Excel formats.">
-                                توليت بشكل فردي التصميم والتنفيذ الشامل لنظام إدارة المهام والحوكمة الذي يتميز بقدرات
-                                لإصدار التقارير الآلية بصيغة PDF وExcel</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="job-title" data-ar="أخصائي تقنية المعلومات"
-                            data-en="Information Technology Specialist">
-                            <i class="fas fa-laptop" style="color: var(--secondary);"></i>
-                            أخصائي تقنية المعلومات
-                        </div>
-                        <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
-                            <span class="date-badge" data-ar="يونيو 2024 – أغسطس 2024"
-                                data-en="Jun 2024 – Aug 2024">يونيو 2024 – أغسطس 2024</span>
-                        </div>
-                        <ul class="description-list">
-                            <li data-ar="توليت دعم العمليات اليومية للبنية الرقمية، بما في ذلك مراقبة شبكات المؤسسة وحل المشكلات التقنية"
-                                data-en="Managed daily operations support for digital infrastructure, including organizational network monitoring and resolution of technical issues.">
-                                توليت دعم العمليات اليومية للبنية الرقمية، بما في ذلك مراقبة شبكات المؤسسة وحل المشكلات
-                                التقنية</li>
-                            <li data-ar="ساعدت في حل المشاكل التقنية Software وHardware للموظفين"
-                                data-en="Provided effective solutions to software and hardware problems for employees.">
-                                ساعدت في حل المشاكل التقنية Software وHardware للموظفين</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <h2 class="section-header">
-                        <i class="fas fa-rocket"></i>
-                        <span data-ar="المشاريع البارزة" data-en="Projects">المشاريع البارزة</span>
-                    </h2>
-
-                    <div class="timeline-item">
-                        <div class="job-title" data-ar="نظام إدارة المهام والحوكمة"
-                            data-en="Task Management & Governance System">
-                            <i class="fas fa-tasks" style="color: var(--primary);"></i>
-                            نظام إدارة المهام والحوكمة
-                        </div>
-                        <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
-                            <span class="date-badge" data-ar="أكتوبر 2025 – فبراير 2026"
-                                data-en="Oct 2025 – Feb 2026">أكتوبر 2025 – فبراير 2026</span>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1jPjcTGXOMm434a3ar2H7HWgQoTyaOMRq?usp=sharing"
-                            target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-ar="عرض المشروع" data-en="View Project">عرض المشروع</span>
-                        </a>
-                        <ul class="description-list">
-                            <li data-ar="صممت وطورت نظام لإدارة المهام والحوكمة بشكل مستقل باستخدام إطار عمل Laravel معززة بتحكم صارم في الوصول القائم على الأدوار (RBAC)"
-                                data-en="Independently designed and developed a task management and governance system using Laravel framework with strict (RBAC)">
-                                صممت وطورت نظام لإدارة المهام والحوكمة بشكل مستقل باستخدام إطار عمل Laravel معززة بتحكم
-                                صارم في الوصول القائم على الأدوار (RBAC)</li>
-                            <li data-ar="طورت لوحات تحكم لمؤشرات الأداء الرئيسية (KPIs)"
-                                data-en="Developed executive dashboards for Key Performance Indicators (KPIs)">
-                                طورت لوحات تحكم لمؤشرات الأداء الرئيسية (KPIs)</li>
-                            <li data-ar="أتمتة إنشاء التقارير الجاهزة PDF وExcel"
-                                data-en="Implemented comprehensive automation for report generation in PDF and Excel formats">
-                                أتمتة إنشاء التقارير الجاهزة PDF وExcel</li>
-                            <li data-ar="اختبارات أداء النظام بمعالجة أكثر من 8000 مهمة لضمان استقرار النظام"
-                                data-en="Conducted performance testing handling over 8,000 tasks to ensure system stability">
-                                اختبارات أداء النظام بمعالجة أكثر من 8000 مهمة لضمان استقرار النظام</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة"
-                            data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">
-                            <i class="fas fa-seedling" style="color: var(--success);"></i>
-                            أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة
-                        </div>
-                        <div class="job-meta">
-                            <span class="company-name" data-ar="مشروع متكامل (Full-Stack)"
-                                data-en="Full-Stack Platform">مشروع متكامل (Full-Stack)</span>
-                            <span class="date-badge" data-ar="أبريل 2024 – مايو 2025"
-                                data-en="Apr 2024 – May 2025">أبريل 2024 – مايو 2025</span>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1RKA_mUlOTgl3P_bQ85IlFPwYMunYalhc?usp=sharing"
-                            target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-ar="عرض المشروع" data-en="View Project">عرض المشروع</span>
-                        </a>
-                        <ul class="description-list">
-                            <li data-ar="توليت مسؤولية التطوير الكامل للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات العلائقية بشكل مستقل"
-                                data-en="Independently managed complete Backend development and designed the relational database schema">
-                                توليت مسؤولية التطوير الكامل للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات
-                                العلائقية بشكل مستقل</li>
-                            <li data-ar="أدرت تخطيط دورات التطوير (Sprints)، وتوزيع المهام، ودورات التحديث التكرارية للميزات باستخدام منهجية (Agile)"
-                                data-en="Managed Sprint planning, task distribution, and iterative feature updates using Agile methodology">
-                                أدرت تخطيط دورات التطوير (Sprints)، وتوزيع المهام، ودورات التحديث التكرارية للميزات
-                                باستخدام منهجية (Agile)</li>
-                            <li data-ar="قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت إنهاء المشروع قبل المدة المحددة"
-                                data-en="Wrote and built the system's programming logic using PHP while ensuring project completion ahead of the specified deadline">
-                                قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت إنهاء المشروع قبل المدة
-                                المحددة</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <h2 class="section-header">
-                        <i class="fas fa-terminal"></i>
-                        <span data-ar="المهارات التقنية" data-en="Skills">المهارات التقنية</span>
-                    </h2>
-                    <div class="skills-container">
-                        <div class="skill-tag"><i class="fas fa-code"></i> <span data-ar="تطوير الواجهات"
-                                data-en="Backend & Frontend">تطوير الواجهات</span></div>
-                        <div class="skill-tag"><i class="fas fa-palette"></i> <span data-ar="واجهة وتجربة المستخدم"
-                                data-en="UI/UX">واجهة وتجربة المستخدم</span></div>
-                        <div class="skill-tag"><i class="fas fa-database"></i> <span data-ar="MySQL & SQL Server"
-                                data-en="MySQL & SQL Server">MySQL & SQL Server</span></div>
-                        <div class="skill-tag"><i class="fas fa-chart-pie"></i> <span data-ar="Power BI"
-                                data-en="Power BI">Power BI</span></div>
-                        <div class="skill-tag"><i class="fas fa-chart-line"></i> <span data-ar="تحليل البيانات"
-                                data-en="Data Analysis">تحليل البيانات</span></div>
-                        <div class="skill-tag"><i class="fas fa-network-wired"></i> <span data-ar="هيكلة الأنظمة"
-                                data-en="Architecture & Analysis">هيكلة الأنظمة</span></div>
-                        <div class="skill-tag"><i class="fas fa-cloud"></i> <span data-ar="بيئات افتراضية"
-                                data-en="Virtual Environments">بيئات افتراضية</span></div>
-
-                        <div class="skill-tag security"><i class="fas fa-shield-alt"></i> <span data-ar="تقييم الثغرات"
-                                data-en="Vulnerability Assessment">تقييم الثغرات</span></div>
-                        <div class="skill-tag security"><i class="fas fa-lock"></i> <span data-ar="GRC"
-                                data-en="GRC">GRC</span></div>
-                        <div class="skill-tag security"><i class="fas fa-server"></i> <span data-ar="SOC"
-                                data-en="SOC">SOC</span></div>
-                        <div class="skill-tag security"><i class="fas fa-shield-alt"></i> <span data-ar="SIEM"
-                                data-en="SIEM">SIEM</span></div>
-                        <div class="skill-tag security"><i class="fas fa-terminal"></i> <span data-ar="Kali Linux"
-                                data-en="Kali Linux">Kali Linux</span></div>
-                        <div class="skill-tag security"><i class="fas fa-bug"></i> <span data-ar="OpenVAS"
-                                data-en="OpenVAS">OpenVAS</span></div>
-                        <div class="skill-tag security"><i class="fas fa-spider"></i> <span data-ar="Burp Suite"
-                                data-en="Burp Suite">Burp Suite</span></div>
-                        <div class="skill-tag security"><i class="fas fa-sitemap"></i> <span data-ar="Nmap"
-                                data-en="Nmap">Nmap</span></div>
-                        <div class="skill-tag security"><i class="fas fa-chart-area"></i> <span data-ar="Splunk"
-                                data-en="Splunk">Splunk</span></div>
-
-                        <div class="skill-tag"><i class="fas fa-headset"></i> <span data-ar="الدعم الفني"
-                                data-en="Technical Support">الدعم الفني</span></div>
-                        <div class="skill-tag"><i class="fas fa-tools"></i> <span data-ar="استكشاف الأخطاء"
-                                data-en="System Troubleshooting">استكشاف الأخطاء</span></div>
-                        <div class="skill-tag"><i class="fas fa-server"></i> <span data-ar="دعم البنية التحتية"
-                                data-en="Infrastructure Support">دعم البنية التحتية</span></div>
-                        <div class="skill-tag"><i class="fas fa-memory"></i> <span data-ar="صيانة الأجهزة"
-                                data-en="HW/SW Maintenance">صيانة الأجهزة</span></div>
-                        <div class="skill-tag"><i class="fas fa-cogs"></i> <span data-ar="الأتمتة"
-                                data-en="Automation">الأتمتة</span></div>
-                        <div class="skill-tag"><i class="fas fa-tasks"></i> <span data-ar="إدارة المشاريع"
-                                data-en="Project Management">إدارة المشاريع</span></div>
-                        <div class="skill-tag"><i class="fas fa-file-word"></i> <span data-ar="تطبيقات مايكروسوفت أوفيس"
-                                data-en="Microsoft Office">تطبيقات مايكروسوفت أوفيس</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="side-column">
-
-                <div class="glass-card qr-box">
-                    <h2 class="section-header" style="justify-content: center; font-size: 1.2em; margin-bottom: 15px;">
-                        <i class="fas fa-qrcode"></i>
-                        <span data-ar="المجلد الشامل" data-en="All Files">المجلد الشامل</span>
-                    </h2>
-                    <a href="https://drive.google.com/drive/folders/11Z9GpTujIJfJyj3VSoC7INjjJwc2KJvn?usp=drive_link"
-                        target="_blank" title="View all files">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://drive.google.com/drive/folders/11Z9GpTujIJfJyj3VSoC7INjjJwc2KJvn?usp=drive_link"
-                            alt="QR Code" class="qr-image"
-                    </a>
-                    <p style="font-size: 0.85em; color: var(--text-muted);"
-                        data-ar="امسح الرمز للوصول السريع للنسخة التفاعلية والمرفقات"
-                        data-en="Scan the QR code to access the interactive version and attachments.">امسح الرمز للوصول
-                        السريع للنسخة التفاعلية والمرفقات</p>
-                </div>
-
-                <div class="glass-card" style="padding: 25px;">
-                    <h2 class="section-header" style="font-size: 1.2em;">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span data-ar="التعليم" data-en="Education">التعليم</span>
-                    </h2>
-                    <div class="side-item">
-                        <h4 data-ar="درجة البكالوريوس في نظم المعلومات"
-                            data-en="Bachelor's Degree in Information Systems">
-                            درجة البكالوريوس في نظم المعلومات</h4>
-                        <p data-ar="كلية علوم الحاسب الآلي<br>جامعة الملك خالد"
-                            data-en="College of Computer Science<br>King Khalid University">كلية علوم الحاسب
-                            الآلي<br>جامعة الملك خالد</p>
-                    </div>
-                </div>
-
-                <div class="glass-card" style="padding: 25px;">
-                    <h2 class="section-header" style="font-size: 1.2em;">
-                        <i class="fas fa-certificate"></i>
-                        <span data-ar="الشهادات والدورات" data-en="Certifications & Courses">الشهادات والدورات</span>
-                    </h2>
-                    <div class="side-item">
-                        <h4 data-ar="إتمام تخصص في الامن السيبراني" data-en="Cybersecurity Specialization">إتمام تخصص في
-                            الامن السيبراني</h4>
-                        <p data-ar="جامعة الملك خالد" data-en="King Khalid University">جامعة الملك خالد</p>
-                    </div>
-                    <div class="side-item">
-                        <h4 data-ar="الشهادة الاحترافية في الامن السيبراني من IBM"
-                            data-en="IBM Cybersecurity Analyst Professional Certificate">
-                            الشهادة الاحترافية في الامن السيبراني من IBM</h4>
-                        <p style="color: var(--secondary); font-weight: 600; margin-bottom: 8px;"
-                            data-ar="77 ساعة تشمل:" data-en="77-Hour Intensive Program covering:">77 ساعة تشمل:</p>
-                        <p class="course-highlight"
-                            data-ar="• الحوكمة والمخاطر والامتثال وخصوصية البيانات<br>• الاستجابة للحوادث والتحقيق الجنائي الرقمي للأنظمة<br>• إدارة وعمليات الأمان<br>• إدارة الثغرات الأمنية<br>• أمن الأنظمة والشبكات<br>• الأمن السحابي"
-                            data-en="• Governance, Risk, Compliance (GRC) & Data Privacy<br>• Incident Response & Digital Forensics<br>• Security Operations & Management (SOC)<br>• Vulnerability Management<br>• System & Network Security<br>• Cloud Security">
-                            • الحوكمة والمخاطر والامتثال وخصوصية البيانات<br>• الاستجابة للحوادث والتحقيق الجنائي الرقمي
-                            للأنظمة<br>• إدارة وعمليات الأمان<br>• إدارة الثغرات الأمنية<br>• أمن الأنظمة والشبكات<br>•
-                            الأمن السحابي
-                        </p>
-                    </div>
-                    <div class="side-item">
-                        <h4 data-ar="إضافة الى:" data-en="In Additional:">إضافة الى:</h4>
-                        <p data-ar="أساسيات تطوير الويب • أساسيات البيانات • أساسيات إدارة المشاريع"
-                            data-en="Fundamentals of Web Development • Data Fundamentals • Project Management Foundations">
-                            أساسيات تطوير الويب • أساسيات البيانات • أساسيات إدارة المشاريع</p>
-                    </div>
-                </div>
-
-                <div class="glass-card" style="padding: 25px;">
-                    <h2 class="section-header" style="font-size: 1.2em;">
-                        <i class="fas fa-globe"></i>
-                        <span data-ar="اللغات" data-en="Languages">اللغات</span>
-                    </h2>
-                    <div class="side-item">
-                        <h4 data-ar="الإنجليزية" data-en="English">الإنجليزية</h4>
-                        <p data-ar="طلاقة مهنية" data-en="Professional">طلاقة مهنية</p>
-                    </div>
-                    <div class="side-item">
-                        <h4 data-ar="العربية" data-en="Arabic">العربية</h4>
-                        <p data-ar="اللغة الأم" data-en="Native">اللغة الأم</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // مؤشر التمرير العلوي
-        window.addEventListener('scroll', () => {
-            const scrollBar = document.querySelector('.scroll-indicator');
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            scrollBar.style.width = scrollPercentage + '%';
-        });
-
-        // إدارة اللغة
-        let currentLanguage = localStorage.getItem('selectedLanguage') || 'ar';
-
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
-            localStorage.setItem('selectedLanguage', currentLanguage);
-            applyLanguage();
-            updateDirection();
-        }
-
-        function applyLanguage() {
-            document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-                el.innerHTML = currentLanguage === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-            });
-            document.getElementById('langBtn').textContent = currentLanguage === 'ar' ? 'EN' : 'AR';
-        }
-
-        function updateDirection() {
-            document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLanguage;
-        }
-
-        window.addEventListener('load', () => {
-            applyLanguage();
-            updateDirection();
-        });
-    </script>
-</body>
-
-</html>
+                            <p data-ar="عرض وتنزيل" data
